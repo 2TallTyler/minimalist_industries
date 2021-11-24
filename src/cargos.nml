@@ -46,7 +46,7 @@ item (FEAT_CARGOS, cargo_building_materials, 1) {
 		town_growth_multiplier:		0;
 		units_of_cargo:				TTD_STR_TONS;
 		items_of_cargo:				string(STR_CARGO_QUANTITY_BDMT);
-		penalty_lowerbound:			30;
+		penalty_lowerbound:			255;
 		single_penalty_length:		255;
 		station_list_colour:		6;
 		cargo_payment_list_colour:	6;
