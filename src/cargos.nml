@@ -1,0 +1,56 @@
+
+/* *** Begin Cargos *** */
+
+cargotable {
+	PASS, BDMT
+}
+
+// Original ID
+item (FEAT_CARGOS, cargo_passengers, 0) {
+	property {
+		number:						0;
+		sprite:						4297;
+		type_name:					TTD_STR_CARGO_PLURAL_PASSENGERS;
+		unit_name:					TTD_STR_CARGO_SINGULAR_PASSENGER;
+		type_abbreviation:			TTD_STR_ABBREV_PASSENGERS;
+		weight:						0.0625;
+		is_freight:					0;
+		cargo_classes:				bitmask(CC_PASSENGERS);
+		cargo_label:				"PASS";
+		town_growth_effect:			TOWNGROWTH_PASSENGERS;
+		town_growth_multiplier:		1;
+		units_of_cargo:				TTD_STR_PASSENGERS;
+		items_of_cargo:				TTD_STR_QUANTITY_PASSENGERS;
+		penalty_lowerbound:			0;
+		single_penalty_length:		22;
+		station_list_colour:		152;
+		cargo_payment_list_colour:	152;
+		price_factor:				137; // from FIRS
+		capacity_multiplier:		4;
+	}
+}
+
+// Use Coal ID
+item (FEAT_CARGOS, cargo_building_materials, 1) {
+	property {
+		number:						1;
+		sprite:						4302;
+		type_name:					string(STR_CARGO_NAME_BDMT);
+		unit_name:					string(STR_CARGO_NAME_BDMT);
+		type_abbreviation:			string(STR_CARGO_ABBREV_BDMT);
+		weight:						1;
+		is_freight:					1;
+		cargo_classes:				bitmask(CC_PIECE_GOODS, CC_BULK);
+		cargo_label:				"BDMT";
+		town_growth_effect:			TOWNGROWTH_NONE;
+		town_growth_multiplier:		0;
+		units_of_cargo:				TTD_STR_TONS;
+		items_of_cargo:				string(STR_CARGO_QUANTITY_BDMT);
+		penalty_lowerbound:			30;
+		single_penalty_length:		255;
+		station_list_colour:		6;
+		cargo_payment_list_colour:	6;
+		price_factor:				-100;
+		capacity_multiplier:		1;		
+	}
+}

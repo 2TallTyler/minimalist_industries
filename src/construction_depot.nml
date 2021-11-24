@@ -1,0 +1,70 @@
+/* *** Begin Construction Depot *** */
+
+spritelayout sprite_construction_depot_1 {
+	ground {
+		sprite: 1420;
+	}
+	building {
+		sprite: 2190;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+	}
+}
+
+spritelayout sprite_construction_depot_2 {
+	ground {
+		sprite: 1420;
+	}
+	building {
+		sprite: 2193;
+		recolour_mode: RECOLOUR_REMAP;
+		palette: PALETTE_USE_DEFAULT;
+	}
+}
+
+item (FEAT_INDUSTRYTILES, ind_tile_construction_depot_1) {
+	property {
+		substitute: 60;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+	}
+	graphics {
+		default: sprite_construction_depot_1;
+	}
+}
+
+item (FEAT_INDUSTRYTILES, ind_tile_construction_depot_2) {
+	property {
+		substitute: 60;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+	}
+	graphics {
+		default: sprite_construction_depot_2;
+	}
+}
+
+tilelayout tilelayout_construction_depot_1 {
+	0,0: ind_tile_construction_depot_1; 0,1: ind_tile_construction_depot_2;
+	1,0: ind_tile_construction_depot_1; 1,1: ind_tile_construction_depot_2;
+}
+
+item (FEAT_INDUSTRIES, industry_construction_depot, 1) {
+	property {
+		substitute:	INDUSTRYTYPE_FOOD_PROCESSING_PLANT;
+		life_type: IND_LIFE_TYPE_BLACK_HOLE;
+		cargo_types: [
+			accept_cargo("BDMT"),
+		];
+		layouts: [
+			tilelayout_construction_depot_1,
+		];
+		name: string(STR_NAME_CONSTRUCTION_DEPOT);
+		nearby_station_name: string(STR_STATION, string(STR_TOWN), string(STR_NAME_CONSTRUCTION_DEPOT));
+		prob_map_gen: 0;
+		prob_in_game: 0;
+		fund_cost_multiplier: 5;
+		map_colour: 149;
+	}
+	graphics {
+		colour: COLOUR_BLUE;
+	}
+}

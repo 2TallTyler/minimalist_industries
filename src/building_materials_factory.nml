@@ -1,0 +1,52 @@
+/* *** Begin Building Materials Factory *** */
+
+item (FEAT_INDUSTRYTILES, ind_tile_building_materials_factory_1) {
+	property {
+		substitute: 39;
+		override: 39;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+	}
+}
+
+item (FEAT_INDUSTRYTILES, ind_tile_building_materials_factory_2) {
+	property {
+		substitute: 40;
+		override: 40;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+	}
+}
+
+item (FEAT_INDUSTRYTILES, ind_tile_building_materials_factory_3) {
+	property {
+		substitute: 41;
+		override: 41;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+	}
+}
+
+item (FEAT_INDUSTRYTILES, ind_tile_building_materials_factory_4) {
+	property {
+		substitute: 42;
+		override: 42;
+		special_flags: bitmask(INDTILE_FLAG_ACCEPT_ALL);
+	}
+}
+
+item (FEAT_INDUSTRIES, industry_building_materials_factory, 0) {
+	property {
+		substitute:	INDUSTRYTYPE_TEMPERATE_FACTORY;
+		life_type: IND_LIFE_TYPE_BLACK_HOLE;
+		cargo_types: [
+			produce_cargo("BDMT", 24),
+		];
+		name: string(STR_NAME_BUILDING_MATERIALS_FACTORY);
+		nearby_station_name: string(STR_STATION, string(STR_TOWN), string(STR_NAME_FACTORY));
+		prob_map_gen: 0;
+		prob_in_game: 0;
+		fund_cost_multiplier: 20;
+		map_colour: 186;
+	}
+	graphics {
+		colour: COLOUR_ORANGE;
+	}
+}
