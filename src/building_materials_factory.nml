@@ -32,12 +32,27 @@ item (FEAT_INDUSTRYTILES, ind_tile_building_materials_factory_4) {
 	}
 }
 
+tilelayout industry_layout_factory_2x1 {
+	0,0:	39;
+	0,1:	40;
+	1,0:	41;
+	1,1:	42;
+
+	2,0:	39;
+	2,1:	40;
+	3,0:	41;
+	3,1:	42;
+}
+
 item (FEAT_INDUSTRIES, industry_building_materials_factory, 0) {
 	property {
 		substitute:	INDUSTRYTYPE_TEMPERATE_FACTORY;
 		life_type: IND_LIFE_TYPE_BLACK_HOLE;
 		cargo_types: [
 			produce_cargo("BDMT", 64),
+		];
+		layouts: [
+			industry_layout_factory_2x1,
 		];
 		name: string(STR_NAME_BUILDING_MATERIALS_FACTORY);
 		nearby_station_name: string(STR_STATION, string(STR_TOWN), string(STR_NAME_FACTORY));
