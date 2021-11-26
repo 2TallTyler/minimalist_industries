@@ -48,5 +48,9 @@ item (FEAT_INDUSTRIES, industry_building_materials_factory, 0) {
 	}
 	graphics {
 		colour: COLOUR_ORANGE;
+		/* Don't allow any production changes */
+		build_prod_change: 16; // 100% production
+		monthly_prod_change: CB_RESULT_IND_PROD_NO_CHANGE;
+		random_prod_change: CB_RESULT_IND_PROD_NO_CHANGE;
 	}
 }
