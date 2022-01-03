@@ -12,11 +12,4 @@ STR_ERROR_INCOMPATIBLE_SET          :{YELLOW}{TITLE}{WHITE} is incompatible with
 STR_TOWN                            :{STRING}
 STR_STATION                         :{STRING} {STRING}
 
-STR_NAME_CONSTRUCTION_DEPOT         :Construction Depot
-
-STR_NAME_BUILDING_MATERIALS_FACTORY :Building Materials Factory
 STR_NAME_FACTORY                    :Factory
-
-STR_CARGO_NAME_BDMT                 :Building Materials
-STR_CARGO_ABBREV_BDMT               :{TINYFONT}BL
-STR_CARGO_QUANTITY_BDMT             :{WEIGHT} of building materials

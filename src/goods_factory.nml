@@ -1,6 +1,6 @@
-/* *** Begin Building Materials Factory *** */
+/* *** Begin Goods Factory *** */
 
-item (FEAT_INDUSTRYTILES, ind_tile_building_materials_factory_1) {
+item (FEAT_INDUSTRYTILES, ind_tile_goods_factory_1) {
 	property {
 		substitute: 39;
 		override: 39;
@@ -8,7 +8,7 @@ item (FEAT_INDUSTRYTILES, ind_tile_building_materials_factory_1) {
 	}
 }
 
-item (FEAT_INDUSTRYTILES, ind_tile_building_materials_factory_2) {
+item (FEAT_INDUSTRYTILES, ind_tile_goods_factory_2) {
 	property {
 		substitute: 40;
 		override: 40;
@@ -16,7 +16,7 @@ item (FEAT_INDUSTRYTILES, ind_tile_building_materials_factory_2) {
 	}
 }
 
-item (FEAT_INDUSTRYTILES, ind_tile_building_materials_factory_3) {
+item (FEAT_INDUSTRYTILES, ind_tile_goods_factory_3) {
 	property {
 		substitute: 41;
 		override: 41;
@@ -24,7 +24,7 @@ item (FEAT_INDUSTRYTILES, ind_tile_building_materials_factory_3) {
 	}
 }
 
-item (FEAT_INDUSTRYTILES, ind_tile_building_materials_factory_4) {
+item (FEAT_INDUSTRYTILES, ind_tile_goods_factory_4) {
 	property {
 		substitute: 42;
 		override: 42;
@@ -44,17 +44,17 @@ tilelayout industry_layout_factory_2x1 {
 	3,1:	42;
 }
 
-item (FEAT_INDUSTRIES, industry_building_materials_factory, 0) {
+item (FEAT_INDUSTRIES, industry_goods_factory, 0) {
 	property {
 		substitute:	INDUSTRYTYPE_TEMPERATE_FACTORY;
 		life_type: IND_LIFE_TYPE_BLACK_HOLE;
 		cargo_types: [
-			produce_cargo("BDMT", 64),
+			produce_cargo("GOOD", 64),
 		];
 		layouts: [
 			industry_layout_factory_2x1,
 		];
-		name: string(STR_NAME_BUILDING_MATERIALS_FACTORY);
+		name: string(STR_NAME_FACTORY);
 		nearby_station_name: string(STR_STATION, string(STR_TOWN), string(STR_NAME_FACTORY));
 		prob_map_gen: 0;
 		prob_in_game: 0;
