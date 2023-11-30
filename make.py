@@ -9,7 +9,7 @@ newgrf_name = "minimalist_industries"
 header_stuff = ["header", "cargos"]
 
 # Files to place in alphabetical order below
-unordered_stuff = ["goods_factory"]
+unordered_stuff = ["goods_factory", "shop"]
 
 # Do you want to copy the completed NewGRF to your OpenTTD folder? (True/False)
 copy_bool = True

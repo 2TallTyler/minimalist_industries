@@ -1,0 +1,31 @@
+/* *** Begin Shop *** */
+
+/* This house has the maximum placement probability (but only spawns once in each town),
+ * giving nearly every town acceptance of Food and Goods. This is important for Game Scripts which require these cargos for a town to grow. */
+
+spritelayout sprite_shop {
+	ground		{ sprite: terrain_type == TILETYPE_SNOW ? 4419 : 4418; }
+	building	{ sprite: (construction_state == 0 ? 4424 : (construction_state == 3 ? (terrain_type == TILETYPE_SNOW ? 4427 : 4426) : 4425)); }
+}
+
+item(FEAT_HOUSES, item_shop, -1, HOUSE_SIZE_1X1) {
+	property {
+		substitute: 46;
+		name: string(STR_NAME_SHOP);
+		building_flags: bitmask(HOUSE_FLAG_PROTECTED);
+		population: 25;
+		mail_multiplier: 4;
+		accepted_cargos: [[PASS, 8], [GOOD, 8]];
+		local_authority_impact: 80;
+		removal_cost_multiplier: 100;
+		probability: 15;
+		years_available: [0, 0xFFFF];
+		minimum_lifetime: 5;
+		availability_mask: [bitmask(TOWNZONE_EDGE, TOWNZONE_OUTSKIRT, TOWNZONE_OUTER_SUBURB, TOWNZONE_INNER_SUBURB), bitmask(CLIMATE_TEMPERATE, CLIMATE_TOYLAND)];
+		building_class: 0;
+	}
+	graphics {
+		default: sprite_shop;
+		construction_check: (same_house_count_town == 0) ? 1 : 0; // Only one per town
+	}
+}
