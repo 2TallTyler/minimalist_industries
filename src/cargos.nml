@@ -2,7 +2,7 @@
 /* *** Begin Cargos *** */
 
 cargotable {
-	PASS, GOOD, MAIL
+	PASS, MAIL, GOOD
 }
 
 // Original ID
@@ -30,31 +30,6 @@ item (FEAT_CARGOS, cargo_passengers, 0) {
 	}
 }
 
-// Use Coal ID
-item (FEAT_CARGOS, cargo_building_materials, 1) {
-	property {
-		number:                     1;
-		sprite:                     4302;
-		type_name:                  TTD_STR_CARGO_PLURAL_GOODS;
-		unit_name:                  TTD_STR_CARGO_SINGULAR_GOODS;
-		type_abbreviation:          TTD_STR_ABBREV_GOODS;
-		weight:                     1;
-		is_freight:                 1;
-		cargo_classes:              bitmask(CC_PIECE_GOODS, CC_BULK);
-		cargo_label:                "GOOD";
-		town_growth_effect:         TOWNGROWTH_NONE;
-		town_growth_multiplier:     0;
-		units_of_cargo:             TTD_STR_TONS;
-		items_of_cargo:             TTD_STR_QUANTITY_GOODS;
-		penalty_lowerbound:         255;
-		single_penalty_length:      255;
-		station_list_colour:        186;
-		cargo_payment_list_colour:  186;
-		price_factor:               -85;
-		capacity_multiplier:        1;
-	}
-}
-
 // Original ID, required for house compatibility.
 item (FEAT_CARGOS, cargo_mail, 2) {
 	property {
@@ -77,5 +52,30 @@ item (FEAT_CARGOS, cargo_mail, 2) {
 		capacity_multiplier:        2;
 		station_list_colour:        23;
 		cargo_payment_list_colour:  23;
+	}
+}
+
+// Original ID, required for house compatibility.
+item (FEAT_CARGOS, cargo_goods, 5) {
+	property {
+		number:                     5;
+		sprite:                     4302;
+		type_name:                  TTD_STR_CARGO_PLURAL_GOODS;
+		unit_name:                  TTD_STR_CARGO_SINGULAR_GOODS;
+		type_abbreviation:          TTD_STR_ABBREV_GOODS;
+		weight:                     1;
+		is_freight:                 1;
+		cargo_classes:              bitmask(CC_PIECE_GOODS, CC_BULK);
+		cargo_label:                "GOOD";
+		town_growth_effect:         TOWNGROWTH_GOODS;
+		town_growth_multiplier:     0;
+		units_of_cargo:             TTD_STR_TONS;
+		items_of_cargo:             TTD_STR_QUANTITY_GOODS;
+		penalty_lowerbound:         255;
+		single_penalty_length:      255;
+		station_list_colour:        186;
+		cargo_payment_list_colour:  186;
+		price_factor:               -85;
+		capacity_multiplier:        1;
 	}
 }
